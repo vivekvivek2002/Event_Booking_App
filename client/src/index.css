@@ -1,0 +1,163 @@
+@import "tailwindcss";
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #f9fafb;
+}
+
+.auth-page {
+  position: relative;
+  isolation: isolate;
+  width: 100vw;
+  min-height: max(36rem, calc(100svh - 5.5rem));
+  margin-left: calc(50% - 50vw);
+  margin-top: -2rem;
+  margin-bottom: -2rem;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: clamp(1.5rem, 5vh, 4rem) clamp(1rem, 4vw, 2rem);
+  overflow: hidden;
+}
+
+.auth-page::before {
+  content: "";
+  position: absolute;
+  inset: -8%;
+  z-index: -2;
+  background: url("/Gemini_Generated_Image_.png") center / cover no-repeat;
+  filter: brightness(0.58) saturate(0.82);
+  animation: auth-background-motion 18s ease-in-out infinite alternate;
+}
+
+.auth-page::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(
+    125deg,
+    rgba(2, 6, 23, 0.78) 0%,
+    rgba(3, 7, 18, 0.58) 48%,
+    rgba(2, 6, 23, 0.82) 100%
+  );
+}
+
+.auth-card {
+  width: min(100%, 30rem);
+  align-self: center;
+  box-sizing: border-box;
+  background: rgba(8, 12, 18, 0.7);
+  color: #fff;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.45);
+}
+
+.auth-card h2,
+.auth-card label,
+.auth-card .text-gray-500,
+.auth-card .text-gray-600,
+.auth-card .text-gray-700,
+.auth-card .text-gray-900 {
+  color: #fff;
+}
+
+.auth-card input {
+  min-height: 3.125rem;
+  box-sizing: border-box;
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.35);
+  transition: border-color 150ms ease, background-color 150ms ease, box-shadow 150ms ease;
+}
+
+.auth-card input:focus {
+  border-color: #fff;
+  background: rgba(255, 255, 255, 0.18);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.2);
+}
+
+.auth-card input::placeholder {
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.auth-card .password-toggle {
+  min-width: 2.75rem;
+  justify-content: center;
+  border: 1px solid #d1d5db;
+  border-radius: 0.5rem;
+  background: #fff;
+  color: #111827;
+  cursor: pointer;
+}
+
+.auth-card .password-toggle:hover {
+  background: #f3f4f6;
+}
+
+.auth-card .password-toggle:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+}
+
+.auth-card form > button[type="submit"] {
+  min-height: 3.125rem;
+  touch-action: manipulation;
+}
+
+.auth-card form > button[type="submit"]:disabled {
+  cursor: wait;
+  opacity: 0.75;
+}
+
+.auth-card a,
+.auth-card button {
+  touch-action: manipulation;
+}
+
+@media (max-width: 480px) {
+  .auth-page {
+    min-height: calc(100svh - 4rem);
+    padding: 1.25rem 0.75rem;
+  }
+
+  .auth-card {
+    padding: 1.5rem !important;
+    border-radius: 1rem;
+  }
+
+  .auth-card h2 {
+    font-size: 1.65rem;
+    line-height: 2rem;
+  }
+}
+
+@media (max-height: 640px) and (min-width: 481px) {
+  .auth-page {
+    align-items: flex-start;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+  }
+}
+
+@keyframes auth-background-motion {
+  from {
+    transform: scale(1) translate3d(0, 0, 0);
+  }
+  to {
+    transform: scale(1.08) translate3d(-1.5%, -1%, 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .auth-page::before {
+    animation: none;
+  }
+}

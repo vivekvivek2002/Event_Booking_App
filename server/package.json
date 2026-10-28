@@ -1,0 +1,32 @@
+{
+  "name": "event-server",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "seed": "node seed.js",
+    "migrate-admin-email": "node migrateAdminEmail.js"
+  },
+  "keywords": [
+    "event",
+    "booking"
+  ],
+  "author": "vivek",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "jsonwebtoken": "^9.0.3",
+    "mongodb": "^7.5.0",
+    "mongoose": "^9.9.3",
+    "multer": "^2.4.0",
+    "nodemailer": "^9.0.4"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  }
+}

@@ -1,0 +1,16 @@
+# Dependencies
+node_modules/
+client/node_modules/
+server/node_modules/
+
+# Environment secrets
+.env
+.env.*
+!.env.example
+
+# Build files
+client/dist/
+server/dist/
+
+# macOS
+.DS_Store
