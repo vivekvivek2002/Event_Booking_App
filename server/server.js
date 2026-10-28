@@ -13,7 +13,13 @@ const bookingRoutes = require("./routes/booking.js");
 const app = express();
 const mongoUri = process.env.MONGODB_URI || process.env.MONGO_URI;
 
-app.use(cors());
+app.use(
+  cors({
+    origin: "https://event-booking-app-1-roa0.onrender.com",
+    credentials: true,
+  })
+);
+
 app.use(express.json());
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 app.use("/api/auth", authRoutes);
